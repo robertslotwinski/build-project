@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  /* --------------------------------- Nav--------------------------------- */
+  .nav-mmo-a {
+    @apply block px-4 py-2 text-gray-600 hover:text-orange-500 hover:bg-gray-100;
+  }
+  .nav-a {
+    @apply text-gray-600 hover:text-orange-500;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-orange-500;
+  }
+}

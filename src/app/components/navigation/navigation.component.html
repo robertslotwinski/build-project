@@ -1,0 +1,41 @@
+<nav
+  class="fixed z-50 w-full transition-colors duration-200 bg-white shadow-lg"
+>
+  <div class="container px-4 mx-auto">
+    <div class="flex items-center justify-between h-16">
+      <div class="text-2xl font-bold text-navy-600">BuildPro</div>
+      <div class="flex items-center space-x-4">
+        <div class="hidden space-x-8 md:flex">
+          <a href="#home" class="nav-a">Strona Główna</a>
+          <a href="#services" class="nav-a">Usługi</a>
+          <a href="#portfolio" class="nav-a">Portfolio</a>
+          <a href="#contact" class="nav-a">Kontakt</a>
+        </div>
+        <button class="text-gray-600 md:hidden" (click)="toggleMobileMenu()">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- --------------------------------------Mobile Menu-------------------------------------- -->
+  @if (isMobileMenuOpen) {
+  <div class="bg-white md:hidden">
+    <a href="#home" class="nav-mmo-a">Strona Główna</a>
+    <a href="#services" class="nav-mmo-a">Usługi</a>
+    <a href="#portfolio" class="nav-mmo-a">Portfolio</a>
+    <a href="#contact" class="nav-mmo-a">Kontakt</a>
+  </div>
+  }
+</nav>

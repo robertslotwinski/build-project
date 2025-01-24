@@ -1,0 +1,120 @@
+<!-- Contact Form Section -->
+<section id="contact" class="py-20 bg-white">
+  <div class="container px-4 mx-auto">
+    <h2 class="mb-12 text-3xl font-bold text-center text-navy-600">
+      Formularz Kontaktowy
+    </h2>
+    <div class="max-w-lg mx-auto">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <input
+              type="text"
+              id="firstName"
+              formControlName="firstName"
+              placeholder="Imię"
+              class="form-input"
+              [ngClass]="{
+                'border-red-500':
+                  submitted && contactForm.get('firstName')?.errors
+              }"
+            />
+            <div
+              *ngIf="submitted && contactForm.get('firstName')?.errors?.['required']"
+              class="mt-1 text-sm text-red-500"
+            >
+              Imię jest wymagane
+            </div>
+          </div>
+          <div>
+            <input
+              type="text"
+              id="lastName"
+              formControlName="lastName"
+              placeholder="Nazwisko"
+              class="form-input"
+              [ngClass]="{
+                'border-red-500':
+                  submitted && contactForm.get('lastName')?.errors
+              }"
+            />
+            <div
+              *ngIf="submitted && contactForm.get('lastName')?.errors?.['required']"
+              class="mt-1 text-sm text-red-500"
+            >
+              Nazwisko jest wymagane
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              placeholder="Email"
+              class="form-input"
+              [ngClass]="{
+                'border-red-500': submitted && contactForm.get('email')?.errors
+              }"
+            />
+            <div
+              *ngIf="submitted && contactForm.get('email')?.errors?.['required']"
+              class="mt-1 text-sm text-red-500"
+            >
+              Email jest wymagany
+            </div>
+            <div
+              *ngIf="submitted && contactForm.get('email')?.errors?.['email']"
+              class="mt-1 text-sm text-red-500"
+            >
+              Proszę wprowadzić poprawny adres email
+            </div>
+          </div>
+          <div>
+            <input
+              type="tel"
+              id="phone"
+              formControlName="phone"
+              placeholder="Numer Telefonu"
+              class="form-input"
+              [ngClass]="{
+                'border-red-500': submitted && contactForm.get('phone')?.errors
+              }"
+            />
+            <div
+              *ngIf="submitted && contactForm.get('phone')?.errors?.['required']"
+              class="mt-1 text-sm text-red-500"
+            >
+              Numer telefonu jest wymagany
+            </div>
+          </div>
+        </div>
+        <div>
+          <textarea
+            id="message"
+            formControlName="message"
+            rows="4"
+            placeholder="Wiadomość"
+            class="form-input"
+            [ngClass]="{
+              'border-red-500': submitted && contactForm.get('message')?.errors
+            }"
+          ></textarea>
+          <div
+            *ngIf="submitted && contactForm.get('message')?.errors?.['required']"
+            class="mt-1 text-sm text-red-500"
+          >
+            Wiadomość jest wymagana
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="w-full py-3 text-white transition bg-orange-500 rounded-lg hover:bg-orange-600"
+        >
+          Wyślij
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
