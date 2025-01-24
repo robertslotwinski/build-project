@@ -16,6 +16,9 @@ html {
   }
 
   .form-input {
-    @apply w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-orange-500;
+    @apply w-full px-2 py-2 border-b-2 focus:outline-none focus:border-orange-500;
+  }
+  .label-hidden {
+    @apply absolute text-sm text-gray-600 transition-all pointer-events-none left-2 -top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-6 peer-focus:text-gray-600 peer-focus:text-sm;
   }
 }
