@@ -19,12 +19,10 @@
               }"
             />
             <label for="firstName" class="label-hidden">Imię</label>
-            <div
-              *ngIf="submitted && contactForm.get('firstName')?.errors?.['required']"
-              class="px-2 mt-1 text-xs text-red-500"
-            >
-              Imię jest wymagane
-            </div>
+            @if (submitted &&
+            contactForm.get('firstName')?.errors?.['required']) {
+            <div class="px-2 mt-1 text-xs text-red-500">Imię jest wymagane</div>
+            }
           </div>
           <div class="relative">
             <input
@@ -39,12 +37,12 @@
               }"
             />
             <label for="lastName" class="label-hidden">Nazwisko</label>
-            <div
-              *ngIf="submitted && contactForm.get('lastName')?.errors?.['required']"
-              class="px-2 mt-1 text-xs text-red-500"
-            >
+            @if (submitted && contactForm.get('lastName')?.errors?.['required'])
+            {
+            <div class="px-2 mt-1 text-xs text-red-500">
               Nazwisko jest wymagane
             </div>
+            }
           </div>
         </div>
         <div class="grid grid-cols-2 gap-4">
@@ -60,18 +58,16 @@
               }"
             />
             <label for="email" class="label-hidden">Adres Email</label>
-            <div
-              *ngIf="submitted && contactForm.get('email')?.errors?.['required']"
-              class="px-2 mt-1 text-xs text-red-500"
-            >
+            @if (submitted && contactForm.get('email')?.errors?.['required']) {
+            <div class="px-2 mt-1 text-xs text-red-500">
               Email jest wymagany
             </div>
-            <div
-              *ngIf="submitted && contactForm.get('email')?.errors?.['email']"
-              class="px-2 mt-1 text-xs text-red-500"
-            >
+            } @else if (submitted &&
+            contactForm.get('email')?.errors?.['email']) {
+            <div class="px-2 mt-1 text-xs text-red-500">
               Proszę wprowadzić poprawny adres email
             </div>
+            }
           </div>
           <div class="relative mt-2">
             <input
@@ -85,12 +81,11 @@
               }"
             />
             <label for="phone" class="label-hidden">Numer Telefonu</label>
-            <div
-              *ngIf="submitted && contactForm.get('phone')?.errors?.['required']"
-              class="px-2 mt-1 text-xs text-red-500"
-            >
+            @if (submitted && contactForm.get('phone')?.errors?.['required']) {
+            <div class="px-2 mt-1 text-xs text-red-500">
               Numer telefonu jest wymagany
             </div>
+            }
           </div>
         </div>
         <div class="relative">
@@ -104,13 +99,11 @@
               'border-red-500': submitted && contactForm.get('message')?.errors
             }"
           ></textarea>
-
-          <div
-            *ngIf="submitted && contactForm.get('message')?.errors?.['required']"
-            class="px-2 mt-1 text-xs text-red-500"
-          >
+          @if (submitted && contactForm.get('message')?.errors?.['required']) {
+          <div class="px-2 mt-1 text-xs text-red-500">
             Wiadomość jest wymagana
           </div>
+          }
         </div>
         <button
           type="submit"

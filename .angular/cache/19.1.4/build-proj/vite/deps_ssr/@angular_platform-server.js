@@ -13,7 +13,8 @@ import {
   provideServerRendering,
   renderApplication,
   renderModule
-} from "./chunk-I4SKH74V.js";
+} from "./chunk-AVGLHRQS.js";
+import "./chunk-56PU25VH.js";
 import "./chunk-GT46FXSJ.js";
 import "./chunk-KJBLNTLG.js";
 import "./chunk-FPO3XRGI.js";
